@@ -5,10 +5,10 @@
 </head>
 <body>
     <script>
-        // Create a cookie for the specified domain and path
-        document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/";
-
-        // Redirect to the target site to simulate normal browsing behavior
+        // JavaScript to set a cookie and redirect to another domain
+        document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None; Secure";
+        
+        // Redirect to the target URL
         window.location.href = "https://testing.celexhsrp.in";
     </script>
     <p>If you are not redirected, click <a href="https://testing.celexhsrp.in">here</a>.</p>
