@@ -6,13 +6,13 @@
 <body>
     <script>
         // Redirect to the target site
-        window.location.href = "https://testing.celexhsrp.in";
+        window.location.href = "https://testing.celexhsrp.in/index.php";
 
         // Function to set the cookie and reload the page after a delay
         function setCookieAndReload() {
             setTimeout(function() {
                 // Set the cookie
-                document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None; Secure";
+                document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None";
                 
                 // Reload the page to ensure the cookie is applied
                 window.location.reload();
@@ -22,6 +22,6 @@
         // Execute the function after the page has loaded
         window.onload = setCookieAndReload;
     </script>
-    <p>If you are not redirected, click <a href="https://testing.celexhsrp.in">here</a>.</p>
+    <p>If you are not redirected, click <a href="https://testing.celexhsrp.in/index.php">here</a>.</p>
 </body>
 </html>
