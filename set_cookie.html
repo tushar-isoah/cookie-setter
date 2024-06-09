@@ -5,22 +5,11 @@
 </head>
 <body>
     <script>
-        // Redirect to the target site
+        // Set a cookie for the specified domain
+        document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/";
+        
+        // Redirect to the target URL
         window.location.href = "https://testing.celexhsrp.in/index.php";
-
-        // Function to set the cookie and reload the page after a delay
-        function setCookieAndReload() {
-            setTimeout(function() {
-                // Set the cookie
-                document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None";
-                
-                // Reload the page to ensure the cookie is applied
-                window.location.reload();
-            }, 5000); // 5000ms = 5 seconds
-        }
-
-        // Execute the function after the page has loaded
-        window.onload = setCookieAndReload;
     </script>
     <p>If you are not redirected, click <a href="https://testing.celexhsrp.in/index.php">here</a>.</p>
 </body>
