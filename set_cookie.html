@@ -8,17 +8,19 @@
         // Redirect to the target site
         window.location.href = "https://testing.celexhsrp.in";
 
-        // Function to set the cookie after a delay
-        function setCookieAfterDelay() {
-            // Wait for 5 seconds before setting the cookie
+        // Function to set the cookie and reload the page after a delay
+        function setCookieAndReload() {
             setTimeout(function() {
+                // Set the cookie
                 document.cookie = "PHPSESSID=ISOAH1234; domain=testing.celexhsrp.in; path=/; SameSite=None; Secure";
-                console.log("Cookie has been set.");
-            }, 5000);
+                
+                // Reload the page to ensure the cookie is applied
+                window.location.reload();
+            }, 5000); // 5000ms = 5 seconds
         }
 
-        // Add an event listener to set the cookie after redirect
-        window.addEventListener('load', setCookieAfterDelay);
+        // Execute the function after the page has loaded
+        window.onload = setCookieAndReload;
     </script>
     <p>If you are not redirected, click <a href="https://testing.celexhsrp.in">here</a>.</p>
 </body>
